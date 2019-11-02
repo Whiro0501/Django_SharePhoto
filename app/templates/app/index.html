@@ -1,0 +1,12 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+
+{% if category %}
+    <h2>カテゴリー：{{ category.title }} の検索結果</h2>
+
+{% endif %}
+
+{% include 'app/photos_list.html' %}
+
+{% endblock %}

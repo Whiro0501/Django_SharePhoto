@@ -1,0 +1,59 @@
+<div class="photo-container　">
+
+
+        <form class="form-inline my-2 my-lg-0 offset-md-5 " method="GET" >
+      <input class="form-control mr-sm-2 " type="search" placeholder="検索" aria-label="Search" name="keyword">
+      <button class="btn btn-outline-secondary my-2 my-sm-0 " type="submit">Search</button>
+    </form>
+
+
+{% for photo in photos %}
+    <div class="photo">
+        <a href="{% url 'app:photos_detail' photo.id %}">
+            <img src="{{ photo.image.url }}" class="photo-img">
+        </a>
+        <div class="photo-info">
+            <a href="{% url 'app:photos_category' category=photo.category %}" class="category">{{ photo.category }}</a>
+            <a href="{% url 'app:users_detail' photo.user.id %}">@{{ photo.user }}</a>
+        </div>
+    </div>
+{% endfor %}
+
+
+
+<div class="container ">
+<div class="row offset-md-5 offset-sm-5 offset-5offset-md-5 offset-sm-5 offset-5">
+    <div>
+<ul class="pagination">
+    <!-- 前へ の部分 -->
+    {% if page_obj.has_previous %}
+        <li class="page-item">
+            <a class="page-link" href="?page={{ page_obj.previous_page_number }}">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+    {% endif %}
+
+    <!-- 数字の部分 -->
+    {% for num in page_obj.paginator.page_range %}
+        {% if page_obj.number == num %}
+            <li class="page-item active"><a class="page-link" href="#!">{{ num }}</a></li>
+        {% else %}
+            <li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+        {% endif %}
+    {% endfor %}
+
+    <!-- 次へ の部分 -->
+    {% if page_obj.has_next %}
+        <li class="page-item">
+            <a class="page-link" href="?page={{ page_obj.next_page_number }}">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+    {% endif %}
+</ul>
+        </div>
+</div>
+</div>
+
+</div>

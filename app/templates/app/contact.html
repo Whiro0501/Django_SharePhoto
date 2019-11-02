@@ -1,0 +1,39 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+
+<div class="d-flex align-items-center">
+  <h1>お問い合わせ</h1>
+  <div class="ml-auto boards__linkBox">
+  </div>
+</div>
+
+<form action="{% url 'app:contact' %}" method="POST" enctype="multipart/form-data">{% csrf_token %}
+<table>
+        <tr>
+            <th>タイトル</th>
+            <td>{{ form.title }}</td>
+        </tr>
+        <tr>
+            <th>名前</th>
+            <td>{{ form.name }}</td>
+        </tr>
+        <tr>
+            <th>アドレス</th>
+            <td>{{ form.email }}</td>
+        </tr>
+        <tr>
+            <th>本文</th>
+            <td>{{ form.content }}</td>
+        </tr>
+    </table>
+<!--    <button type="submit" class="btn">保存</button>-->
+    <button type="submit" class="btn btn-primarybtn btn-primary">送信</button>
+</form>
+
+<div>
+    <a href="{% url 'app:index' %}">ホームに戻る</a>
+</div>
+
+
+{% endblock %}

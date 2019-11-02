@@ -1,0 +1,27 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+
+<div class="d-flex align-items-center">
+  <h1>ユーザ一覧</h1>
+  <div class="ml-auto boards__linkBox">
+  </div>
+</div>
+
+<table class="table table-hover boards__table">
+  <thead class="thead-dark">
+    <tr>
+      <th>ID</th>
+      <th>ユーザ</th>
+      <th>フォロー</th>
+    </tr>
+  </thead>
+    {% for user in users %}
+  <tbody>
+    <tr>
+　　　 <th>{{ user.id }}</th>
+      <th>{{ user.username }}</th>
+      <td><a href="{% url 'app:follow' user.id %}"> フォロー！ </a></td>
+{% endfor %}
+
+{% endblock %}

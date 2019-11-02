@@ -1,0 +1,37 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+
+<form class="form-signin" method="post">{% csrf_token %}
+    {% if form.errors %}
+        <p>ユーザー名かパスワードが間違っています。もう一度入力してください。</p>
+    {% endif %}
+    <h2>ログイン</h2>
+    <label>ユーザー名</label>
+    <input name="username">
+    <br>
+    <label>パスワード</label>
+    <input type="password" name="password">
+    <br>
+    <input type="submit" value="ログイン">
+</form>
+
+<p><a href="{% url 'app:signup' %}">サインアップはこちら</a></p>
+
+<dir>
+
+</dir>
+
+<form class="" method="post" action="{% url 'app:login' %}">{% csrf_token %}　
+
+    <input type="hidden" value="testuser" name="username">
+    <input type="hidden" value="Testp@ssw0rd" name="password">
+    <input type="submit" class="btn btn-primarybtn btn-primary" name="testuser" value="テストユーザでログイン">
+</form>
+
+ <li>
+      <a href="{% url 'social:begin' 'twitter' %}?next={{ request.path }}">Login with Twitter</a>
+    </li>
+
+
+{% endblock %}

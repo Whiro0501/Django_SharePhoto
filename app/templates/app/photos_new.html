@@ -1,0 +1,39 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+
+<div class="d-flex align-items-center">
+  <h1>投稿</h1>
+  <div class="ml-auto boards__linkBox">
+  </div>
+</div>
+
+
+<form action="{% url 'app:photos_new' %}" method="POST" enctype="multipart/form-data">{% csrf_token %}
+    <table>
+        <tr>
+            <th>タイトル</th>
+            <td>{{ form.title }}</td>
+        </tr>
+        <tr>
+            <th>コメント</th>
+            <td>{{ form.comment }}</td>
+        </tr>
+        <tr>
+            <th>画像</th>
+            <td>{{ form.image }}</td>
+        </tr>
+        <tr>
+            <th>カテゴリー</th>
+            <td>{{ form.category }}</td>
+        </tr>
+    </table>
+<!--    <button type="submit" class="btn">保存</button>-->
+    <button type="submit" class="btn btn-primarybtn btn-primary">保存</button>
+</form>
+
+<div>
+    <a href="{% url 'app:index' %}">ホームに戻る</a>
+</div>
+
+{% endblock %}
