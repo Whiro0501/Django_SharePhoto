@@ -21,7 +21,9 @@
     <tr>
 　　　 <th>{{ user.id }}</th>
       <th>{{ user.username }}</th>
-      <td><a href="{% url 'app:follow' user.id %}"> フォロー！ </a></td>
+      <td><a href="{% url 'app:follow' user.id %}"><button class="btn btn-primary" type="submit"> フォロー </button></a></td>
 {% endfor %}
 
 {% endblock %}
+
+

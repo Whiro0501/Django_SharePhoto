@@ -24,7 +24,7 @@ SECRET_KEY = '+gc4o0bs$9jf3*15xn(2u*twca4mvtz9&r0&!ge1^*euv!=1h*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -123,6 +123,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
@@ -134,7 +135,6 @@ LOGIN_URL = 'app:login'
 LOGIN_REDIRECT_URL = 'app:index'
 LOGOUT_REDIRECT_URL = 'app:index'
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 
 SOCIAL_AUTH_PIPELINE = [

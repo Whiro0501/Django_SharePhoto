@@ -12,10 +12,10 @@
 <h2>{{ photo.title }}</h2>
 <p>{{ photo.comment }}</p>
 
-    <a href="{% url 'app:like' photo.id %}">いいね！</a>{{ photo.like_num }}
 
     <form method="post" action="{% url 'app:like' photo.id %}">{% csrf_token %}
-    <button class="btn btn-primary" type="submit">いいね！</button>{{ photo.like_num }}
+    <button class="btn btn-primary" type="submit">いいね！{{ photo.like_num }}</button>
+    <p></p>
 </form>
 
 
