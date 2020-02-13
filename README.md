@@ -1,5 +1,6 @@
 # Hirogram
 自分の大好きなことを友達に共有するアプリです。
+※現在アプリは停止しています。
 
 <img alt="トップ" src="https://user-images.githubusercontent.com/36604680/68087603-e4e2d380-fe9a-11e9-8c5d-7fa915fbf1c8.png" />
 
