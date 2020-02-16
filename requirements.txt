@@ -50,7 +50,7 @@ et-xmlfile==1.0.1
 fastcache==1.0.2
 filelock==3.0.10
 flake8==3.7.7
-Flask==1.0.2
+#Flask==1.0.2
 future==0.17.1
 gevent==1.4.0
 glob2==0.6
